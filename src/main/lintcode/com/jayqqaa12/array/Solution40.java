@@ -18,14 +18,13 @@ public class Solution40 {
     /**
      * 算法跟 no.39 基本一样
      *
-     *
      * @param candidates
      * @param target
      * @return
      */
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
 
-        List list =new ArrayList<>();
+        List list = new ArrayList<>();
         Arrays.sort(candidates);
         dfs(list, new ArrayList(), target, candidates, 0);
 
@@ -35,22 +34,28 @@ public class Solution40 {
 
     private void dfs(List list, ArrayList subList, int target, int[] candidates, int start) {
 
-        if(target>0){
+        if (target > 0) {
 
-            for (int i = start; i < candidates.length;) {
+            for (int i = start; i < candidates.length; ) {
 
                 subList.add(candidates[i]);
-                dfs(list,subList,target-candidates[i],candidates,++i); //不同点 因为只能用一次所以 ++i
-                subList.remove(subList.size()-1);
+                dfs(list, subList, target - candidates[i], candidates, ++i); //不同点 因为只能用一次所以 ++i
+                subList.remove(subList.size() - 1);
             }
 
 
         }
-        if(target==0){
-            if(!list.contains(subList)){  //不同点
+        if (target == 0) {
+            if (!list.contains(subList)) {  //不同点
                 list.add(new ArrayList<>(subList));
+                return;
             }
+            System.out.println("find target repeat sublist:" + subList);
         }
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution40().combinationSum2(new int[]{2, 3, 6, 7, 7}, 7));
     }
 }

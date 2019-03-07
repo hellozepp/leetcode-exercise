@@ -8,7 +8,7 @@ import java.util.Arrays;
  * 不使用额外内存
  * <p>
  * 难度 2星
- *
+ * 题目要求O(n)时间复杂度，O(1)空间复杂度。
  * @REVIEW
  */
 public class Solution136 {

@@ -43,7 +43,7 @@ public class Solution137 {
 
         int a = 0, b = 0;
 
-        for (int i = 0; i < nums.length; i += 3) {
+        for (int i = 0; i < nums.length; i +=1) {
 
             a = (a ^ nums[i]) & ~b;
             b = (a ^ nums[i]) & ~a;
@@ -51,5 +51,10 @@ public class Solution137 {
         }
 
         return a;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution137().singleNumber(new int[]{1,1,1,2,2,2,3,3,3,4,5,5,5,6,6,6}));
+        System.out.println(new Solution137().singleNumber(new int[]{1,2,2,2,3,3,3,5,5,5,6,6,6}));
     }
 }

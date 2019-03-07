@@ -1,6 +1,9 @@
 package com.jayqqaa12.other;
 
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /*
  *
  * 从乱序数组中找到 第K大的数字
@@ -20,7 +23,7 @@ public class Solution215 {
         // use quick sort's idea
         // put nums that are <= pivot to the left
         // put nums that are  > pivot to the right
-        int i = lo, j = hi, pivot = a[hi];
+        int i = lo, j = hi, pivot = a[hi];//转动,枢轴
 
         while (i < j)
             if (a[i++] > pivot) swap(a, --i, --j);
@@ -29,17 +32,37 @@ public class Solution215 {
         // count the nums that are <= pivot from lo
         int m = i - lo + 1;
         // pivot is the one!
-        if (m == k)     return i;
+        if (m == k) return i;
             // pivot is too big, so it must be on the left
         else if (m > k) return quickSelect(a, lo, i - 1, k);
             // pivot is too small, so it must be on the right
-        else            return quickSelect(a, i + 1, hi, k - m);
+        else return quickSelect(a, i + 1, hi, k - m);
     }
 
     void swap(int[] a, int i, int j) {
         int tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
+    }
+
+    public int findKthLargest1(int[] nums, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
+            public int compare(Integer a, Integer b) {
+                if (a.equals(b)) {
+                    return 0;
+                }
+                return a > b ? -1 : 1;//比较器里面 -1 和1 是相对谁优先的意思。越小越优先。
+            }
+        });
+
+        for (int i = 0; i < nums.length; i++) {
+            maxHeap.offer(nums[i]);
+        }
+        for (int i = 0; i < k - 1; i++) {
+            maxHeap.poll();
+        }
+
+        return maxHeap.poll();
     }
 
 }

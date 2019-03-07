@@ -33,7 +33,7 @@ public class Solution39 {
             for (int i = 0; i < candidates.length; i++) {
 
                 subList.add(candidates[i]);
-                dfs(list,subList,target-candidates[i],candidates,i); //因为可以用多次 i 不增加
+                dfs(list,subList,target-candidates[i],candidates,i); //因为可以用多次 i 不增加 i没用都是0开始
                 subList.remove(subList.size()-1);
             }
         }

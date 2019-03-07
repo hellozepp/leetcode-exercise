@@ -18,7 +18,7 @@ public class Solution80 {
         int c=0;
 
         for (int n:nums){
-            if(c<2|| n>nums[c-2]){
+            if(c<2|| n>nums[c-2]){//c<2可以控制nums小于2的case
                 nums[c++]=n;
             }
 

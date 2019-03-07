@@ -5,6 +5,7 @@ import java.util.List;
 
 
 /**
+ * start在n上是全排列的问题,在i上是组合的问题
  * 求数组 中 所有数可能的结果集  （数组的值 不重复）组合
  * <p>
  * For example,
@@ -37,7 +38,7 @@ public class Solution78 {
 
         list.add(new ArrayList<>(subList));
 
-        for (int i = start; i < nums.length; i++) {
+        for (int i = start; i < nums.length; i++) {//退出条件结合在nums.length
             subList.add(nums[i]);
             System.out.println("start:"+start+",i:"+i+",subList:"+subList);
             dfs(list, subList, nums, i + 1);
