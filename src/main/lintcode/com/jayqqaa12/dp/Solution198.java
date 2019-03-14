@@ -23,4 +23,26 @@ public class Solution198 {
         return Math.max(rob, notrob);
 
     }
+//    动态方程：
+//dp[i] = num[i] + dp[i-2] > dp[i-1] ? num[i] + dp[i-2] : dp[i - 1]
+public int rob1(int[] num) {
+        int[] max = new int[num.length];
+        if (num == null || num.length == 0) {
+            return 0;
+        }
+        if (num.length == 1) {
+            return num[0];
+        }
+        if(num.length==2){
+            return Math.max(num[0],num[1]);
+        }
+        max[0]=num[0];
+        max[1]=Math.max(num[0],num[1]);
+        for(int i=2;i<num.length;i++)
+        {
+            max[i]=Math.max(max[i-1],max[i-2]+num[i]);
+        }
+        return max[num.length-1];
+    }
+
 }

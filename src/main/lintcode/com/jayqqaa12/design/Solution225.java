@@ -6,6 +6,12 @@ import java.util.Queue;
 
 /**
  * 用queue 模拟 stack
+ * 使用队列实现栈的下列操作：
+ * <p>
+ * push(x) – 元素 x 入栈
+ * pop() – 移除栈顶元素
+ * top() – 获取栈顶元素
+ * empty() – 返回栈是否为空
  */
 class Solution225 {
 
@@ -21,19 +27,21 @@ class Solution225 {
 
     // Removes the element on top of the stack.
     public void pop() {
-        if (!queue.isEmpty())  {
+        if (!queue.isEmpty()) {
             queue.remove(top);
 
-            int i=1;
-            for(int n:queue){
-                if(i++==queue.size())top=n;
+            int i = 1;
+            for (int n : queue) {
+                if (i++ == queue.size()) top = n;
             }
         }
     }
+
     // Get the top element.
     public int top() {
         return top;
     }
+
     // Return whether the stack is empty.
     public boolean empty() {
 
