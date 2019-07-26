@@ -5,7 +5,7 @@ import com.jayqqaa12.ListNode;
 
 /**
  * 去掉所有重复的节点
- *
+ * 给定一个排序的链表，要求删除所有重复的元素
  * <p>
  * For example,
  * Given 1->2->3->3->4->4->5, return 1->2->5.

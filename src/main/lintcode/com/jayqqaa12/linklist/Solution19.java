@@ -4,7 +4,12 @@ import com.jayqqaa12.ListNode;
 
 /**
  * 删除 最后第N个节点
+ * 给定一个链表: 1->2->3->4->5, 和 n = 2.
  *
+ * 当删除了倒数第二个节点后，链表变为 1->2->3->5.
+ * 说明：
+ *
+ * 给定的 n 保证是有效的。
  * 难度2星
  *
  * FIXME
@@ -25,7 +30,7 @@ public class Solution19 {
         ListNode slow = dummy, fast = dummy;
         dummy.next = head;
 
-        //先移动 fast到 length- n的位置
+        //先移动 fast到 length - n的位置
         for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }

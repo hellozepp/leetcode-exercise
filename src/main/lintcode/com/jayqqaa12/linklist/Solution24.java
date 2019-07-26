@@ -5,16 +5,17 @@ import com.jayqqaa12.ListNode;
 /**
  * 交换 相邻的节点
  * 难度2星
- *
+ * 给定 1->2->3->4, 你应该返回 2->1->4->3.
+ * cur first sec (next) 交换图是一个红纽带
  * FIXME
  *
  */
 public class Solution24 {
 
     public ListNode swapPairs(ListNode head) {
-        ListNode newNode = new ListNode(0);
-        newNode.next = head;
-        ListNode current = newNode;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode current = dummy;
         while (current.next != null && current.next.next != null) {
             ListNode first = current.next;
             ListNode second = current.next.next;
@@ -24,6 +25,6 @@ public class Solution24 {
             current.next.next = first;
             current = current.next.next;
         }
-        return newNode.next;
+        return dummy.next;
     }
 }

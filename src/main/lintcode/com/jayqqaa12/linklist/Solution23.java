@@ -8,7 +8,8 @@ import com.jayqqaa12.ListNode;
  * 难度3星
  */
 public class Solution23 {
-    public static ListNode mergeKLists(ListNode[] lists){
+    public static ListNode mergeKLists(ListNode[] lists)
+    {
         return partion(lists,0,lists.length-1);
     }
 
