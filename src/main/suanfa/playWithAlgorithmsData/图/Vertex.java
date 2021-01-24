@@ -1,0 +1,15 @@
+package suanfa.playWithAlgorithmsData.图;
+
+/**
+ * 顶点类
+ * @author Administrator
+ *
+ */
+public class Vertex {
+	public char label;
+	public boolean wasVisited;
+	
+	public Vertex(char label) {
+		this.label = label;
+	}
+}
