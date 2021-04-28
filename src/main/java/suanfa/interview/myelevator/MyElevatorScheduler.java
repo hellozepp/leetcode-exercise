@@ -2,7 +2,6 @@ package suanfa.interview.myelevator;
 
 import lombok.Builder;
 import lombok.Data;
-import org.Thread.stop.thread;
 import org.apache.commons.lang.math.RandomUtils;
 
 import java.util.GregorianCalendar;
@@ -254,7 +253,7 @@ public class MyElevatorScheduler {
                 while (true) {
                     liftActionPolicyFactory.lift(e);
                     try {
-                        thread.sleep(1000);
+                        sleep(1000);
                     } catch (InterruptedException e1) {
                         e1.printStackTrace();
                     }

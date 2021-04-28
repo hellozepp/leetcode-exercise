@@ -1,9 +1,6 @@
 package suanfa.playWithAlgorithmsData.indexheap.test;
 
-import org.test.Util;
 import suanfa.Utils;
-
-import java.util.HashMap;
 
 public interface IndexMaxHeapTest<Item extends Comparable> {
     /**

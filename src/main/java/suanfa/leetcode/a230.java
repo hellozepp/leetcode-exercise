@@ -1,11 +1,11 @@
 package suanfa.leetcode;
 
-import com.alibaba.dubbo.common.utils.Stack;
 import javafx.util.Pair;
 import suanfa.playWithAlgorithmsData.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class a230 {
     private static int solution(TreeNode node, int i) {

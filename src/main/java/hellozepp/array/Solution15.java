@@ -48,6 +48,7 @@ public class Solution15 {
         }
         return res;
     }
+
     //重写一遍
     public static List<List<Integer>> threeSum1(int[] num) {
         Arrays.sort(num);
@@ -57,18 +58,24 @@ public class Solution15 {
             while (left < right) {
                 if (num[left] + num[right] == sum) {
                     res.add(Arrays.asList(num[i], num[left], num[right]));
-                    do left++; while (left < right && num[left] == num[left + 1]);
-                    do right--; while (left < right && num[right] == num[right - 1]);
+                    do {
+                        left++;
+                    } while (left < right && num[left] == num[left + 1]);
+                    do {
+                        right--;
+                    } while (left < right && num[right] == num[right - 1]);
                 } else if (num[left] + num[right] < sum) {
                     left++;
-                } else right--;
+                } else {
+                    right--;
+                }
             }
         }
         return res;
     }
 
     public static void main(String[] args) {
-        List<List<Integer>> lists = threeSum1(new int[]{-2,-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> lists = threeSum1(new int[]{-2, -1, 0, 1, 2, -1, -4});
         System.out.println(lists.toString());
     }
 

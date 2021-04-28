@@ -29,4 +29,8 @@ public class Solution16 {
         }
         return min;
     }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution16().threeSumClosest(new int[]{-1, 2, 1, -4}, 1));
+    }
 }
