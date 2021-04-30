@@ -1,5 +1,7 @@
 package hellozepp.array;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,6 +50,11 @@ public class Solution18 {
         return ans;
     }
 
+    public static void main(String[] args) {
+        int[] ints = {-1, 2, 1, -4, 1, 1};
+        System.out.println(new Solution18().fourSum(ints, 1));
+        System.out.println(JSON.toJSONString(ints));
+    }
 
 
 

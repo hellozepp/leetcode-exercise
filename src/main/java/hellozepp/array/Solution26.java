@@ -24,14 +24,14 @@ public class Solution26 {
 
     public int removeDuplicates(int[] nums) {
 
-        if(nums.length<2)return nums.length;
+        if (nums.length < 2) return nums.length;
 
-        int c=1;
+        int c = 1;
         for (int i = 1; i < nums.length; i++) {
-            if(nums[i]!=nums[i-1]) nums[c++]= nums[i];
+            if (nums[i] != nums[i - 1]) nums[c++] = nums[i];
         }
 
-        return  c;
+        return c;
     }
 
 }

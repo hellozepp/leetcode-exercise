@@ -17,22 +17,22 @@ public class Solution27 {
 
     public int removeElement(int[] nums, int val) {
 
-        int c =0;
+        int c = 0;
         for (int i = 0; i < nums.length; i++) {
 
-            if(nums[i]!=val){
-                nums[c++]= nums[i];
+            if (nums[i] != val) {
+                nums[c++] = nums[i];
             }
         }
 
-        return  c;
+        return c;// 注意这里长度应该加一,而上面自增已经加过
     }
 
     public static void main(String[] args) {
         int[] ints = {1, 2, 2, 3};
-        System.out.println(new Solution27().removeElement(ints,2));
+        System.out.println(new Solution27().removeElement(ints, 2));
         for (int anInt : ints) {
-            System.out.print(anInt+",");
+            System.out.print(anInt + ",");
         }
     }
 }

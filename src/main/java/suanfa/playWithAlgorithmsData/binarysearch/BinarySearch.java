@@ -86,7 +86,7 @@ public class BinarySearch {
             }
         }
         if (num[left] == key)
-        return left;
+            return left;
         if (num[right] == key) return right;
         return -1;
     }
@@ -104,15 +104,15 @@ public class BinarySearch {
         // 对[0...N)区间的数值使用二分查找，最终结果应该就是数字本身
         // 对[N...2*N)区间的数值使用二分查找，因为这些数字不在arr中，结果为-1
 //        for (int i = 0; i < 2 * N; i++) {
-        for (int i = 0; i <  N; i++) {
+        for (int i = 0; i < N; i++) {
 //            int v = BinarySearch.find(arr, new Integer(i));
             int v = BinarySearch.find2(arr, new Integer(i));
             if (i < N) {
-                assert v == i:"assert";
+                assert v == i : "assert";
             } else {
-                assert v == -1:"assert";
+                assert v == -1 : "assert";
             }
-            if (v == -1 || arr[v]!=i){
+            if (v == -1 || arr[v] != i) {
                 System.out.println(false);
             }
         }
