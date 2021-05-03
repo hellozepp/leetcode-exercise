@@ -8,10 +8,10 @@ package suanfa.leetcode;
 public class a209MinimumSizeSubarraySum {
     //    滑动窗口的思路
     public int solution2(int[] arr, int s) {
-        int l = 0, r = 0, res = 0, sum = 0;
+        int l = 0, r = -1, res = arr.length, sum = 0;
         while (l < arr.length) {
-            if (sum < s && r < arr.length) {
-                sum += arr[r++];
+            if (sum < s && r + 1 < arr.length) {
+                sum += arr[++r];
             } else {
                 sum -= arr[l++];
             }

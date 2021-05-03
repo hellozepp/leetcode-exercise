@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * 202. Happy Number
  */
-public class HappyNumber {
+public class HappyNumber202 {
 
     public boolean isHappy(int n) {
         if (n < 10) {

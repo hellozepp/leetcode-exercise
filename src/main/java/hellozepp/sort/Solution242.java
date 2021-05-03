@@ -34,7 +34,7 @@ public class Solution242 {
             else map.put(c + "", map.get(c + "") + 1);
         }
         Map<String, Integer> map2 = new HashMap<>();
-        for (char c : s.toCharArray()) {
+        for (char c : t.toCharArray()) {
             if (map2.get(c + "") == null) map2.put(c + "", 1);
             else map2.put(c + "", map2.get(c + "") + 1);
         }

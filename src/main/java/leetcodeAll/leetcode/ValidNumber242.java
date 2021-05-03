@@ -3,6 +3,8 @@ package leetcodeAll.leetcode;
 /**
  * 65. Valid Number
  * <p>
+ *     判断 2个 字符串是否由 相同的字符组成
+ *     给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的一个字母异位词。
  * Validate if a given string is numeric.
  * <p>
  * Some examples: "0" => true " 0.1 " => true "abc" => false "1 a" => false "2e10" => true
@@ -12,7 +14,7 @@ package leetcodeAll.leetcode;
  *
  * @author Watcher
  */
-public class ValidNumber {
+public class ValidNumber242 {
 
     /**
      * 设置状态标志位，耗时2ms，最快

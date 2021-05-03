@@ -1,5 +1,14 @@
 package suanfa.playWithAlgorithmsData;
 
+/**
+ * 时间复杂度分析
+ *
+ * 设str1长度为n, str2的长度为m,
+ *
+ * Next数组的求取：为O(m)
+ *
+ * 总的时间复杂度为：O(n)
+ */
 public class KMP {
     public static int kmp(String str, String dest, int[] next) {//str文本串  dest 模式串
         for (int i = 0, j = 0; i < str.length(); i++) {
