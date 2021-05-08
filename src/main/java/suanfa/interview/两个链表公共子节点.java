@@ -1,12 +1,14 @@
 package suanfa.interview;
 
 import static suanfa.interview.环形入口节点.ListNode;
+
 /**
  * @Author: zhanglin
  * @Date: 2019/6/20
  * @Time: 11:44 PM
  */
 public class 两个链表公共子节点 {
+    // 链表交叉点
     public static void main(String[] args) {
         //构造链表结构测试用
         ListNode a = new ListNode(1);

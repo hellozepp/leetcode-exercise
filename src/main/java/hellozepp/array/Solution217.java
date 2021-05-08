@@ -21,9 +21,9 @@ public class Solution217 {
 
         Set<Integer> set = new HashSet<>();
         for (int n : nums) {
-            if(set.contains(n))return true;
+            if (set.contains(n)) return true;
             set.add(n);
         }
-        return  false;
+        return false;
     }
 }

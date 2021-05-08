@@ -21,4 +21,17 @@ public class a83 {
         }
         return root;
     }
+
+    // 重写
+    private MyLinkedList solution1(MyLinkedList head) {
+        MyLinkedList cur = head;
+        while (cur != null && cur.next != null) {
+            if (cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
+            }
+        }
+        return head;
+    }
 }

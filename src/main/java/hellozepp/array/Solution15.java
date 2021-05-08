@@ -53,7 +53,7 @@ public class Solution15 {
     public static List<List<Integer>> threeSum1(int[] num) {
         Arrays.sort(num);
         List<List<Integer>> res = new LinkedList<>();
-        for (int i = 0; i == 0 || i < num.length - 2 && num[i] != num[i - 1]; i++) {
+        for (int i = 0; i < num.length - 2 && num[i] != num[i - 1]; i++) {
             int sum = -num[i], left = i + 1, right = num.length - 1;
             while (left < right) {
                 if (num[left] + num[right] == sum) {

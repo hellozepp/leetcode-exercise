@@ -3,7 +3,7 @@ package suanfa.playWithAlgorithmInterview.a08LongestSubstringWithoutRepeatingCha
 import java.lang.reflect.Method;
 import java.lang.Class;
 
-// 比较这个工程中 Solution2, Solution3 和 Solution4 的算法运行效率
+// 比较这个工程中 Solution2, Solution343 和 Solution4 的算法运行效率
 public class Main {
 
     public static void testPerformace(String algoClassName, String algoName, String s){
@@ -39,7 +39,7 @@ public class Main {
 
         System.out.println("Test: 10,000,000 length of completely random string:");
         testPerformace("Solution2", "lengthOfLongestSubstring", s.toString());
-        testPerformace("Solution3", "lengthOfLongestSubstring", s.toString());
+        testPerformace("Solution343", "lengthOfLongestSubstring", s.toString());
         testPerformace("Solution4", "lengthOfLongestSubstring", s.toString());
 
     }

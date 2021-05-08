@@ -20,11 +20,11 @@ public class Solution86 {
 
         ListNode dummy1 = new ListNode(0), dummy2 = new ListNode(0);  //dummy heads of the 1st and 2nd queues
         ListNode curr1 = dummy1, curr2 = dummy2;      //current tails of the two queues;
-        while (head!=null){
-            if (head.val<x) {
+        while (head != null) {
+            if (head.val < x) {
                 curr1.next = head;
                 curr1 = head;
-            }else {
+            } else {
                 curr2.next = head;
                 curr2 = head;
             }

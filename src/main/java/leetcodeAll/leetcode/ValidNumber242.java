@@ -3,8 +3,15 @@ package leetcodeAll.leetcode;
 /**
  * 65. Valid Number
  * <p>
- *     判断 2个 字符串是否由 相同的字符组成
- *     给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的一个字母异位词。
+ * 判断 2个 字符串是否由 相同的字符组成
+ * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的一个字母异位词。
+ * 示例 1:
+ * 输入: s = "anagram", t = "nagaram"
+ * 输出: true
+ * 示例 2:
+ * 输入: s = "rat", t = "car"
+ * 输出: false
+ *
  * Validate if a given string is numeric.
  * <p>
  * Some examples: "0" => true " 0.1 " => true "abc" => false "1 a" => false "2e10" => true

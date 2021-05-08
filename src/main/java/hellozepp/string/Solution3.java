@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 无重复字符的最长子串
+ * 无重复字符的最长子串,查找表求解
  * 题目描述：
  *
  * 给定一个字符串，找出不含有重复字符的 最长子串 的长度。
