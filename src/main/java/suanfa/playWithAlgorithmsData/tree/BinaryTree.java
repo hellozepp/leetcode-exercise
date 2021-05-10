@@ -79,7 +79,7 @@ public class BinaryTree {
         }
     }
 
-    void BFS(Node root) {
+    void bfs(Node root) {
         if (root == null) return;
         LinkedList<Node> list = new LinkedList<>();
         list.add(root);
@@ -97,7 +97,11 @@ public class BinaryTree {
         }
     }
 
-    void DFSWithStack(Node root) {
+    /**
+     * dfs 栈版本, 相当于先根遍历，栈倒着写
+     * @param root
+     */
+    void dfsWithStack(Node root) {
         if (root == null)
             return;
         Stack<Node> stack = new Stack<>();
@@ -114,15 +118,19 @@ public class BinaryTree {
         }
     }
 
-    void DFS(Node root) {
+    /**
+     * dfs 递归版本
+     * @param root
+     */
+    void dfs(Node root) {
         if (root == null)
             return;
         print(root);
         if (root.left != null) {
-            DFS(root.left);
+            dfs(root.left);
         }
         if (root.right != null) {
-            DFS(root.right);
+            dfs(root.right);
         }
     }
 

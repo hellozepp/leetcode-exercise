@@ -3,13 +3,13 @@ package suanfa.leetcode;
 import suanfa.playWithAlgorithmInterview.linkedlist.MyLinkedList;
 
 /**
- * 下面题目相反
- * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
- * Output: 7 -> 0 -> 8
+ *
+ * Input: (3 -> 4 -> 2) + (4 -> 6 -> 5)
+ * Output: 8 -> 0 -> 7
  * <p>
- * 输入2个链表 是逆序的 然后计算结果 逆序输出
+ * 输入2个链表 是顺序的 然后计算结果
  * <p>
- * 就是  342 +465= 807  =》7-0-8
+ * 就是  342 + 465= 807
  * <p>
  * 难度2星
  */

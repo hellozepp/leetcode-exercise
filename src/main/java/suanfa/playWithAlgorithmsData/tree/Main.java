@@ -13,7 +13,7 @@ public class Main {
 		tree.inOrder2(root);
 		/*System.out.println("\nDFSWithStack-----");
 		tree.DFSWithStack(root);*/
-		/*System.out.println("\nBFS-----");
-		tree.BFS(root);*/
+		/*System.out.println("\nbfs-----");
+		tree.bfs(root);*/
 	}
 }

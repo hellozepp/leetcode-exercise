@@ -46,7 +46,8 @@ public class quickSort {
     public static void main(String[] args) {
         Integer num[] = {10, 9, 7, 6, 5, 4, 4, 3, 2, 1};
         long startTime = System.nanoTime();
-        new quickSort().sort(num);
+        new quickSort();
+        sort(num);
         long endTime = System.nanoTime();
         System.out.println(AlgorUtils.isSorted(num));
         System.out.println((endTime - startTime) / Math.pow(10, 9));

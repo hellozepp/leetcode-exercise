@@ -5,9 +5,19 @@ import suanfa.playWithAlgorithmsData.tree.TreeNode;
 
 import java.util.*;
 
+/**
+ *     a
+ *    /  \
+ *   b    c
+ *  / \   /
+ * d   e  f
+ *  pre: ABDECF
+ *  in: DBEAFC
+ *  post: DEBFCA
+ */
 public class postorderTraversal {//后序 栈的方法倒着写
 
-    public static List<Integer> postorderTraversal(TreeNode root) {
+    public static List<Integer> postOrderTraversal(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<Integer>();
         if (root == null) {
             return res;
@@ -67,13 +77,39 @@ public class postorderTraversal {//后序 栈的方法倒着写
         return res;
     }
 
+    // 倒着写,右左根
+    public static List<Integer> preOrderTraversal1(TreeNode root) {
+
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        if (root == null)
+            return res;
+
+        Stack<Command> stack = new Stack<Command>();
+        stack.push(new Command("go", root));
+        while (!stack.empty()) {
+            Command command = stack.pop();
+
+            if (command.s.equals("print"))
+                res.add(command.node.val);
+            else {
+                if (command.node.right != null)
+                    stack.push(new Command("go", command.node.right));
+                if (command.node.left != null)
+                    stack.push(new Command("go", command.node.left));
+                stack.push(new Command("print", command.node));
+
+            }
+        }
+        return res;
+    }
+
     /**
-     * 队列的方法 倒着写
+     * 队列的方法 倒着写 
      *
      * @param root
      * @return
      */
-    public static List<Integer> preorderTraversal(TreeNode root) {
+    public static List<Integer> preOrderTraversal(TreeNode root) {
         List<Integer> result = new LinkedList<>();
         Deque<TreeNode> queue = new LinkedList<>();
         queue.push(root);
@@ -89,22 +125,45 @@ public class postorderTraversal {//后序 栈的方法倒着写
     }
 
     /**
+     *  非递归版本层序遍历，即 bfs
+     * @param root
+     * @return
+     */
+    public static List<Integer> levelOrder(TreeNode root) {
+        // 我们使用LinkedList来作为我们的队列
+        List<Integer> result = new LinkedList<>();
+        Deque<TreeNode> q = new LinkedList<TreeNode>();
+        q.offer(root);
+        while (!q.isEmpty()) {
+            TreeNode node = q.poll();
+            result.add(node.val);
+            if (node.left != null)
+                q.add(node.left);
+            if (node.right != null)
+                q.add(node.right);
+        }
+        return result;
+    }
+
+    /**
      * 6
      * /\
      * 3 8
-     * /
-     * 7
+     * /\  /
+     * 7 9 10
      */
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(6);
         treeNode.left = new TreeNode(3);
         TreeNode node = new TreeNode(8);
-        node.left = new TreeNode(7);
-//        node.right = new TreeNode(1);
+        treeNode.left.left = new TreeNode(7);
+        treeNode.left.right = new TreeNode(9);
         treeNode.right = node;
-        List<Integer> solution = postorderTraversal(treeNode);
-        System.out.println(solution);//[3, 7, 8, 6]
-        System.out.println(inorderTraversal(treeNode));//[3, 6, 7, 8]
-        System.out.println(preorderTraversal(treeNode));//[6, 3, 8, 7] 先跟,等于层序
+        node.left = new TreeNode(10);
+        System.out.println("postOrderTraversal:" + postOrderTraversal(treeNode));//[7, 9, 3, 10, 8, 6]
+        System.out.println("inorderTraversal:" + inorderTraversal(treeNode));//[7, 3, 9, 6, 10, 8]
+        System.out.println("preOrderTraversal:" + preOrderTraversal(treeNode));//[6, 3, 7, 9, 8, 10]
+        System.out.println("preOrderTraversal1:" + preOrderTraversal1(treeNode));//[6, 3, 7, 9, 8, 10]
+        System.out.println("levelOrder:" + levelOrder(treeNode));//[6, 3, 8, 7, 9, 10]
     }
 }

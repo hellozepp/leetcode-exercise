@@ -1,5 +1,6 @@
 package hellozepp.linklist;
 
+import com.alibaba.fastjson.JSON;
 import hellozepp.ListNode;
 
 
@@ -27,12 +28,12 @@ public class Solution2 {
         listNode1.next = listNode2;
         listNode3.next = listNode4;
         listNode4.next = listNode5;
-        ListNode listNode6 = addTwoNumbers(listNode1, listNode3);
-        System.out.println(listNode6);
+        ListNode listNode6 = addTwoNumbers(listNode, listNode3);
+        System.out.println(JSON.toJSONString(listNode6));
     }
 
     /**
-     * 直接加就行了 最优解 答案不对
+     * 直接加就行了 最优解
      * @param l1
      * @param l2
      * @return
