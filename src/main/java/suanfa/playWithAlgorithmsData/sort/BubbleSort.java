@@ -24,7 +24,7 @@ public class BubbleSort {
         for (int i = 0; i < Length - 1; i++) {
             for (int j = 0; j < Length - i - 1; j++) {
                 if (num[j] > num[j + 1]) {
-                    Utils.exec(num, j, j + 1);
+                    Utils.exchange(num, j, j + 1);
                 }
             }
         }

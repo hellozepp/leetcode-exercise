@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Utils {
 
-	public static void exec(int[] num, int i, int min) {
+	public static void exchange(int[] num, int i, int min) {
 		int temp = num[i];
 		num[i] = num[min];
 		num[min]= temp;

@@ -3,7 +3,7 @@ package hellozepp.linklist;
 import hellozepp.ListNode;
 
 /**
- * 使用 O(nlogn)的时间复杂度 和固定的空间 排序
+ * 使用 O(nlogn)的时间复杂度 和常数级固定的空间 排序
  * <p>
  * 也就是归并排序
  * <p>

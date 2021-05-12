@@ -5,6 +5,16 @@ import hellozepp.ListNode;
 /**
  * 旋转 链表 从第k个节点
  * Given a list, rotate the list to the right by k places, where k is non-negative.
+ *给你一个链表的头节点 head ，旋转链表，将链表每个节点向右移动 k 个位置。
+ * 输入：head = [0,1,2], k = 4
+ * 输出：[2,0,1]
+ * 012 - 201 - 120 - 012 - 201
+ *  
+ * 提示：
+ *
+ * 链表中节点的数目在范围 [0, 500] 内
+ * -100 <= Node.val <= 100
+ * 0 <= k <= 2 * 109
  *
  * For example:
  * Given 1->2->3->4->5->NULL and k = 2,

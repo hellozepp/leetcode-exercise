@@ -4,7 +4,7 @@ package hellozepp.array;
 /**
  *
  * 删除重复字符串 （数组已排序）
- *给定一个有序数组，删除重复内容，使每个元素只出现一次，并返回新的长度。
+ * 给定一个有序数组，删除重复内容，使每个元素只出现一次，并返回新的长度。
  *
  * 不要为其他数组分配额外的空间，您必须通过在 O（1）额外的内存中就地修改输入数组来实现这一点。
  *
@@ -24,11 +24,15 @@ public class Solution26 {
 
     public int removeDuplicates(int[] nums) {
 
-        if (nums.length < 2) return nums.length;
+        if (nums.length < 2) {
+            return nums.length;
+        }
 
         int c = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) nums[c++] = nums[i];
+            if (nums[i] != nums[i - 1]) {
+                nums[c++] = nums[i];
+            }
         }
 
         return c;

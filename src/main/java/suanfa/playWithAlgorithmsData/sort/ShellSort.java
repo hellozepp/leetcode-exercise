@@ -18,7 +18,7 @@ public class ShellSort {
 
 			for(int i=h;i<N;i++){
 				for(int j=i; j >= h  && Utils.less(num[j], num[j-h]);j-=h){//打水漂，迭代直到水漂的所有点
-					Utils.exec(num, j, j-h);
+					Utils.exchange(num, j, j-h);
 				}
 			}
 
