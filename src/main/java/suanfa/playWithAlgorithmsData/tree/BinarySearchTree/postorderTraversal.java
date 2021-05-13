@@ -42,7 +42,7 @@ public class postorderTraversal {//后序 栈的方法倒着写
         return res;
     }
 
-    private static class Command {
+     static class Command {
         String s;   // go, print
         TreeNode node;
 

@@ -38,8 +38,6 @@ public class Solution20 {
                 return false;
             }
         }
-
         return stack.isEmpty();
-
     }
 }

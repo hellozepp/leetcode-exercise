@@ -11,40 +11,40 @@ public class Solution150 {
 
     public int evalRPN(String[] tokens) {
 
-        int rst =0;
-        Stack<Integer > stack = new Stack<>();
+        int rst = 0;
+        Stack<Integer> stack = new Stack<>();
 
-        for (String  st:tokens){
+        for (String st : tokens) {
 
-            if(st.equals("+")){
+            if (st.equals("+")) {
                 int n1 = stack.pop();
-                int n2= stack.pop();
-                stack.push(n1+n2);
-            }
-            else if(st.equals("-")){
+                int n2 = stack.pop();
+                stack.push(n1 + n2);
+            } else if (st.equals("-")) {
                 int n1 = stack.pop();
-                int n2= stack.pop();
-                stack.push(n2-n1);
-            }
-           else if(st.equals("*")){
+                int n2 = stack.pop();
+                stack.push(n2 - n1);
+            } else if (st.equals("*")) {
                 int n1 = stack.pop();
-                int n2= stack.pop();
-                stack.push(n1*n2);
-            }
-           else if("/".equals(st)){
+                int n2 = stack.pop();
+                stack.push(n1 * n2);
+            } else if ("/".equals(st)) {
                 int n1 = stack.pop();
-                int n2= stack.pop();
-                stack.push(n2/n1);
+                int n2 = stack.pop();
+                stack.push(n2 / n1);
+            } else {
+                stack.push(Integer.parseInt(st));
             }
-            else stack.push(Integer.parseInt(st));
 
         }
 
-        if(!stack.isEmpty()){
-            for (int n: stack) rst+=n;
+        if (!stack.isEmpty()) {
+            for (int n : stack) {
+                rst += n;
+            }
         }
 
-        return  rst;
+        return rst;
 
     }
 }

@@ -1,11 +1,9 @@
 package hellozepp.tree;
 
 import hellozepp.TreeNode;
+import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 返回先序遍历
@@ -16,6 +14,33 @@ import java.util.List;
  */
 public class Solution144 {
 
+    // 倒着写,右左根
+    public static List<Integer> preOrderTraversal1(TreeNode root) {
+
+        ArrayList<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
+        Stack<Pair<TreeNode, Boolean>> stack = new Stack<>();
+        stack.push(new Pair<>(root, false));
+        while (!stack.empty()) {
+            Pair<TreeNode, Boolean> pop = stack.pop();
+
+            if (pop.getValue()) {
+                res.add(pop.getKey().val);
+            } else {
+                if (pop.getKey().right != null) {
+                    stack.push(new Pair<>(pop.getKey().right, false));
+                }
+                if (pop.getKey().left != null) {
+                    stack.push(new Pair<>(pop.getKey().left, false));
+                }
+                stack.push(new Pair<>(pop.getKey(), true));
+            }
+        }
+        return res;
+    }
 
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new LinkedList<>();
@@ -24,10 +49,12 @@ public class Solution144 {
         while (!queue.isEmpty()) {
             TreeNode node = queue.pop();
             if (node != null) {
-                if (node.right != null)
+                if (node.right != null) {
                     queue.push(node.right);
-                if (node.left != null)
+                }
+                if (node.left != null) {
                     queue.push(node.left);
+                }
                 result.add(node.val);
             }
         }
@@ -53,7 +80,9 @@ public class Solution144 {
 
     private void traver(List list, TreeNode root) {
 
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
 
 
         list.add(root.val);
@@ -70,7 +99,7 @@ public class Solution144 {
         node.left = new TreeNode(7);
 //        node.right = new TreeNode(1);
         treeNode.right = node;
-        List<Integer> solution = new Solution144().preorderTraversal(treeNode);
+        List<Integer> solution = preOrderTraversal1(treeNode);
         System.out.println(solution);//[3, 7, 8, 6]
     }
 }
