@@ -1,7 +1,11 @@
 package hellozepp.math;
 
 
+import javafx.util.Pair;
+
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 求完美平方的数量
@@ -12,10 +16,36 @@ import java.util.Arrays;
  * For example,
  * given n = 12, return 3 because 12 = 4 + 4 + 4;
  * given n = 13, return 2 because 13 = 4 + 9.
+ * 提示：
+ *
+ * 1 <= n <= 104
  * <p>
  * 难度3星
  */
 public class Solution279 {
+    /**
+     * 超时了
+     * 使用图的最短路径求解，每次num - i * i 当前数字-完全平方数，如4（4，1+1+1+1）或 5（1+4，1+1+1+1+1）
+     * @param n
+     * @return
+     */
+    public int numSquares1(int n) {
+        assert (n > 0);
+        Deque<Pair<Integer, Integer>> q = new LinkedList<>();
+        q.offer(new Pair<>(n, 0));
+        while (!q.isEmpty()) {
+            Integer num = q.peek().getKey();
+            Integer step = q.peek().getValue();
+            q.poll();
+            if (num == 0) {
+                return step;
+            }
+            for (int i = 1; num - i * i >= 0; i++) { // 12 9 3
+                q.offer(new Pair<>(num - i * i, step + 1));
+            }
+        }
+        throw new IllegalArgumentException("no solution");
+    }
 
     /**
      * 如果一个数x可以表示为一个任意数a加上一个平方数b∗b，
@@ -56,5 +86,9 @@ public class Solution279 {
         return dp[n];
     }
 
+    public static void main(String[] args) {
+        System.out.println(new Solution279().numSquares1(13));
+        System.out.println(new Solution279().numSquares1(12));
+    }
 
 }

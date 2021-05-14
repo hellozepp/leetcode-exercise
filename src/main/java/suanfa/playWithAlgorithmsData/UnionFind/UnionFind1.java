@@ -10,8 +10,9 @@ public class UnionFind1 {
         count = n;
         id = new int[n];
         // 初始化, 每一个id[i]指向自己, 没有合并的元素
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             id[i] = i;
+        }
     }
 
     // 查找过程, 查找元素p所对应的集合编号
@@ -33,12 +34,15 @@ public class UnionFind1 {
         int pID = find(p);
         int qID = find(q);
 
-        if (pID == qID)
+        if (pID == qID) {
             return;
+        }
 
         // 合并过程需要遍历一遍所有元素, 将两个元素的所属集合编号合并
-        for (int i = 0; i < count; i++)
-            if (id[i] == pID)
+        for (int i = 0; i < count; i++) {
+            if (id[i] == pID) {
                 id[i] = qID;
+            }
+        }
     }
 }

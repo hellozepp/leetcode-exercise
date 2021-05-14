@@ -17,22 +17,21 @@ import java.util.List;
  */
 public class Solution199 {
 
-
-
-
     public List<Integer> rightSideView(TreeNode root) {
-
-        List list =new ArrayList<>();
-        dfs(root,list,0);
-        return  list;
+        List<Integer> result = new ArrayList<Integer>();
+        findRightView(root, result, 0);
+        return result;
     }
 
-    private void dfs(TreeNode root, List list, int dept) {
+    private void findRightView(TreeNode root, List<Integer> result, int depth) {
+        if (root == null) {
+            return;
+        }
+        if (depth == result.size()) {
+            result.add(root.val);
+        }
 
-        if(root==null)return;
-
-        if(dept==list.size()) list.add(root.val);
-        dfs(root.left,list,dept+1);
-        dfs(root.left,list,dept+1);
+        findRightView(root.right, result, depth + 1);
+        findRightView(root.left, result, depth + 1);
     }
 }

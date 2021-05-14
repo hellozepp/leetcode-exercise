@@ -42,7 +42,7 @@ public class postorderTraversal {//后序 栈的方法倒着写
         return res;
     }
 
-     static class Command {
+    static class Command {
         String s;   // go, print
         TreeNode node;
 
@@ -137,10 +137,12 @@ public class postorderTraversal {//后序 栈的方法倒着写
         while (!q.isEmpty()) {
             TreeNode node = q.poll();
             result.add(node.val);
-            if (node.left != null)
+            if (node.left != null) {
                 q.add(node.left);
-            if (node.right != null)
+            }
+            if (node.right != null) {
                 q.add(node.right);
+            }
         }
         return result;
     }

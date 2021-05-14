@@ -15,7 +15,7 @@ public class unionTest {
         }
     }
 
-    public  int find(int i) {
+    public int find(int i) {
         assert i >= 0 && i < count : "查找的索引不存在";
         while (i != parent[i]) {
             parent[i] = parent[parent[i]];
@@ -57,7 +57,7 @@ public class unionTest {
         unionTest.println();
         System.out.println("\n" + unionTest.find(3));
         unionTest.println();
-        unionTest.union(1,3);
+        unionTest.union(1, 3);
         unionTest.println();
 
 
