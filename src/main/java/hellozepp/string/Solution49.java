@@ -16,13 +16,6 @@ import java.util.*;
  *   ["nat","tan"],
  *   ["bat"]
  * ]
- * 1
- * 2
- * 3
- * 4
- * 5
- * 6
- * 7
  * 说明：
  *
  * 所有输入均为小写字母。
@@ -45,7 +38,6 @@ public class Solution49 {
     }
 
     private String sort(String pre) {
-
         char[] temp = pre.toCharArray();
         Arrays.sort(temp);
         return new String(temp);

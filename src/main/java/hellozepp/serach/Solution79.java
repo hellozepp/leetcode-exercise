@@ -21,13 +21,14 @@ package hellozepp.serach;
  * 难度2.5星
  */
 public class Solution79 {
-    static boolean[][] visited;
+    private static boolean[][] visited;
+
     public boolean exist(char[][] board, String word) {
         visited = new boolean[board.length][board[0].length];
 
-        for(int i = 0; i < board.length; i++){
-            for(int j = 0; j < board[i].length; j++){
-                if((word.charAt(0) == board[i][j]) && search(board, word, i, j, 0)){
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if ((word.charAt(0) == board[i][j]) && search(board, word, 0, i, j)) {
                     return true;
                 }
             }
@@ -36,20 +37,21 @@ public class Solution79 {
         return false;
     }
 
-    private boolean search(char[][]board, String word, int i, int j, int index){
-        if(index == word.length()){
+    private boolean search(char[][] board, String word, int index, int i, int j) {
+        if (index == word.length()) {
             return true;
         }
 
-        if(i >= board.length || i < 0 || j >= board[i].length || j < 0 || board[i][j] != word.charAt(index) || visited[i][j]){
+        if (i >= board.length || i < 0 || j >= board[i].length || j < 0
+                || board[i][j] != word.charAt(index) || visited[i][j]) {
             return false;
         }
 
         visited[i][j] = true;
-        if(search(board, word, i-1, j, index+1) ||
-                search(board, word, i+1, j, index+1) ||
-                search(board, word, i, j-1, index+1) ||
-                search(board, word, i, j+1, index+1)){
+        if (search(board, word, index + 1, i - 1, j) ||
+                search(board, word, index + 1, i + 1, j) ||
+                search(board, word, index + 1, i, j - 1) ||
+                search(board, word, index + 1, i, j + 1)) {
             return true;
         }
 

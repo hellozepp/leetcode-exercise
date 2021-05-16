@@ -11,16 +11,21 @@ package hellozepp.array;
 public class Solution70 {
     public int climbStairs(int n) {
 
-        if (n <= 0) return 0;
-        if (n == 1) return 1;
+        if (n <= 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
 
         int[] store = new int[n];
 
         store[0] = 1;//1层
         store[1] = 2;//2层
 
-        for (int i = 2; i < n; i++)
+        for (int i = 2; i < n; i++) {
             store[i] = store[i - 1] + store[i - 2];
+        }
 
 
         return store[n - 1];

@@ -13,11 +13,8 @@ public class Fib {
     }
 
     private static int fib(int i) {
-        if (i == 1) {
-            return 1;
-        }
-        if (i == 0) {
-            return 0;
+        if (i == 1 || i == 2) {
+            return i;
         }
         return fib(i - 1) + fib(i - 2);
     }
@@ -26,11 +23,11 @@ public class Fib {
     private static HashMap<Integer, Integer> map = new HashMap<>();
 
     private static int fib2_1(int i) {
-        if (i == 1) {
-            return 1;
-        }
         if (i == 0) {
             return 0;
+        }
+        if (i == 1 || i == 2) {
+            return i;
         }
         if (map.containsKey(i)) {
             return map.get(i);
@@ -47,7 +44,7 @@ public class Fib {
         map.put(0, 1);
         map.put(1, 1);
         for (int i = 2; i < n; i++) {
-            map.put(i , map.get(i - 1) + map.get(i - 2));
+            map.put(i, map.get(i - 1) + map.get(i - 2));
         }
         return map.get(n - 1);
     }
